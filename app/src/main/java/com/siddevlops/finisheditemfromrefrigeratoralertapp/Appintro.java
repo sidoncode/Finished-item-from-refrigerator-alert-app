@@ -44,7 +44,7 @@ public class Appintro extends AppIntro {
             boolean checkshared = mSharedPreferences.getBoolean("checkstate",false);
 
             if(checkshared == true){
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
                 finish();
             }
         }
@@ -59,8 +59,6 @@ public class Appintro extends AppIntro {
         // Decide what to do when the user clicks on "Skip"
         transtion_main_activity();
         sharedprefeditor.putBoolean("checkstate",false).commit();
-
-
         finish();
     }
 
