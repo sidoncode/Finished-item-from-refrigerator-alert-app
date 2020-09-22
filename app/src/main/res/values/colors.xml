@@ -9,7 +9,9 @@
     <color name="gradient_end_color">#18a3fe</color>
     <color name="white">#ffffff</color>
 
-    
+    <color name="purpel">#C028EC</color>
+
+<!--     <color name="black">#000000</color> -->
     
     <color name="tab_indicator_gray">#c0c0c0</color>
     <color name="intro_title_color">#000000</color>
