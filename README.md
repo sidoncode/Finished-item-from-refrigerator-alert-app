@@ -18,3 +18,12 @@ Food item in Refrigerator Reminder App
 
 
 ![empty constructor](https://user-images.githubusercontent.com/40432616/94025278-f516e080-fdd5-11ea-84f0-a64cfc115468.PNG)
+
+
+## MAJOR CHANGES IN FIRESTORE CLOUDE
+### 1
+
+![auth](https://user-images.githubusercontent.com/40432616/94114272-bdf01000-fe65-11ea-9539-e6b262e5949d.PNG)
+
+### 2
+![userauht](https://user-images.githubusercontent.com/40432616/94114279-bfb9d380-fe65-11ea-9902-ed21e96ec814.PNG)
