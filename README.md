@@ -28,3 +28,5 @@ Food item in Refrigerator Reminder App
 ### 2
 ![auth](https://user-images.githubusercontent.com/40432616/94114847-846bd480-fe66-11ea-9e11-f24cefa7580c.PNG)
 
+
+### 3 linking with the anon User
