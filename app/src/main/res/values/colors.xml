@@ -17,4 +17,19 @@
     <color name="intro_title_color">#000000</color>
     <color name="intro_description_color">#656565</color>
 
+
+    <!-- note background colors -->
+
+    <color name="yellow"> #ffdb00 </color>
+    <color name="red"> #ff0000 </color>
+    <color name="cyan"> #94efff </color>
+    <color name="grey"> #758487 </color>
+    <color name="lpurple"> #ea93ff </color>
+    <color name="violet"> #ff40b7 </color>
+    <color name="magenta"> #ff405a </color>
+    <color name="green"> #64ff66 </color>
+    <color name="blue"> #465cff </color>
+
+    <!-- End of colors code -->
+
 </resources>
