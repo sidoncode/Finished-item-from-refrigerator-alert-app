@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "268639027975",
+    "firebase_url": "https://refrigerator-alert-app.firebaseio.com",
+    "project_id": "refrigerator-alert-app",
+    "storage_bucket": "refrigerator-alert-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268639027975:android:c2d72cb29e4cee537dfba2",
+        "android_client_info": {
+          "package_name": "com.siddevlops.finisheditemfromrefrigeratoralertapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268639027975-bhatrth9brdg52j9gevl9f6je64scnbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCprTjQUeNzaa5XA6aUZzIm37sV_oACnOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268639027975-bhatrth9brdg52j9gevl9f6je64scnbk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
