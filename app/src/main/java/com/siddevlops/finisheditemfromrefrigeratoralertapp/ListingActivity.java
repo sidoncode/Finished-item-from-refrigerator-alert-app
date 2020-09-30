@@ -30,7 +30,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.ThrowOnExtraProperties;
 import com.siddevlops.finisheditemfromrefrigeratoralertapp.model.Adapter;
 import com.siddevlops.finisheditemfromrefrigeratoralertapp.noteactivity.AddNote;
 import com.siddevlops.finisheditemfromrefrigeratoralertapp.noteactivity.EditNote;
@@ -96,6 +95,7 @@ public class ListingActivity extends AppCompatActivity implements NavigationView
 
                         transition_to_note_detail_activity.putExtra("title",note.getTitle());
                         transition_to_note_detail_activity.putExtra("content",note.getContent());
+                        transition_to_note_detail_activity.putExtra("expdate",note.getExpat());
                         transition_to_note_detail_activity.putExtra("code",code);
                         transition_to_note_detail_activity.putExtra("noteId",docid);
 

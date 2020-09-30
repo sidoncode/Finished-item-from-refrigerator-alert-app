@@ -1,49 +1,43 @@
 package com.siddevlops.finisheditemfromrefrigeratoralertapp.noteactivity;
 
+import com.siddevlops.finisheditemfromrefrigeratoralertapp.noteactivity.EditNote;
+
 import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.app.TimePickerDialog;
-import android.app.role.RoleManager;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.nfc.Tag;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.text.format.DateFormat;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TimePicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.siddevlops.finisheditemfromrefrigeratoralertapp.Appintro;
-import com.siddevlops.finisheditemfromrefrigeratoralertapp.DashboardActivity;
 import com.siddevlops.finisheditemfromrefrigeratoralertapp.R;
-import com.siddevlops.finisheditemfromrefrigeratoralertapp.userauth.Splash;
 
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AddNote extends AppCompatActivity {
+public class AddNote extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
       FirebaseFirestore fstore;
       FloatingActionButton fb;
@@ -56,8 +50,13 @@ public class AddNote extends AppCompatActivity {
 
       private DatePickerDialog.OnDateSetListener mOnDateSetListener;
       private DatePickerDialog.OnCancelListener mOnCancelListener;
-
       private DatePickerDialog mDatePicker;
+      private EditText edited;
+
+     public String date;
+
+
+    private  EditText mEditText;
 
 
 
@@ -72,6 +71,8 @@ public class AddNote extends AppCompatActivity {
 
         fb = findViewById(R.id.fab);
 
+        edited = (EditText) findViewById(R.id.text12);
+
         notecontent = (EditText) findViewById(R.id.addNoteContent);
         notetitle = (EditText) findViewById(R.id.addNoteTitle);
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -81,11 +82,10 @@ public class AddNote extends AppCompatActivity {
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 //Toast.makeText(getApplicationContext(),"btn floating action button is clicked",Toast.LENGTH_SHORT).show();
                 String note_content = notecontent.getText().toString();
                 String note_title = notetitle.getText().toString();
-                String exp_date = null;
-
 
 
 
@@ -97,31 +97,69 @@ public class AddNote extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"The Note Title is Empty",Toast.LENGTH_SHORT).show();
                 }
                 else if(note_content.isEmpty() && note_title.isEmpty()){
-                    Toast.makeText(getApplicationContext(),"The Note Content and Note Title is Empty",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"The Note Content and Note Title is Empty",
+                            Toast.LENGTH_SHORT).show();
                 }else{
                     //Toast.makeText(getApplicationContext(),"Note added",Toast.LENGTH_SHORT).show();
 
-                    mProgressBar.setVisibility(View.VISIBLE);
+//                    mProgressBar.setVisibility(View.VISIBLE);
 
-                    Calendar cal = Calendar.getInstance();
+
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(
+                            AddNote.this,R.style.
+                            MaterialAlertDialog_MaterialComponents_Title_Icon
+                    );
+
+                    final View customlayout= getLayoutInflater().inflate(R.layout.expdialog,null);
+
+
+                    builder.setView(customlayout);
+
+                    builder.setTitle("Custom Dialog");
+
+                    builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(getApplicationContext(),"positive btn",Toast.LENGTH_LONG).show();
+
+                            mEditText = customlayout.findViewById(R.id.editText);
+
+                             date  = mEditText.getText().toString();
+                            Log.i("editshowella",date);
+
+                        }
+
+                    }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(getApplicationContext(),
+                                    "The Food Expiry Date is Required Field",Toast.LENGTH_LONG).show();
+                        }
+                    });
+
+                    builder.show();
+
+
+
+                    /**Calendar cal = Calendar.getInstance();
                     int year = cal.get(Calendar.YEAR);
                     int month = cal.get(Calendar.MONTH);
-                    int day = cal.get(Calendar.DAY_OF_MONTH);
+                    final int day = cal.get(Calendar.DAY_OF_MONTH);
 
-                    final DatePickerDialog datePickerDialog = new DatePickerDialog(AddNote.this,
-                            android.R.style.Theme_Holo_Dialog_MinWidth,mOnDateSetListener, year,month,day);
+                     DatePickerDialog datePickerDialog = new DatePickerDialog(AddNote.this,
+                            android.R.style.Theme_DeviceDefault_Dialog_MinWidth,mOnDateSetListener, year,month,day);
                     datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
                     datePickerDialog.show();
 
-
-                    mOnDateSetListener = new DatePickerDialog.OnDateSetListener() {
+                    /**datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
                         @Override
                         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                            Log.d("selected date", "date selected");
+                            String date = month + "/" + dayOfMonth + "/" + month;
 
                         }
-                    };
+                    });
 
                     mOnCancelListener = new DialogInterface.OnCancelListener() {
                         @Override
@@ -129,20 +167,26 @@ public class AddNote extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"canceleed btn pressed",Toast.LENGTH_LONG).show();
                         }
                     };
+
+
                     /**datePickerDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                         @Override
                         public void onDismiss(DialogInterface dialog) {
                             Toast.makeText(getApplicationContext(),"dissmissss",Toast.LENGTH_LONG).show();
                         }
-                    });**/
+                    });
+
+
+
                     datePickerDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Positive", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(getApplicationContext(),"Positive button clicked",Toast.LENGTH_LONG).show();
 
-                            Intent trasition_to_mainactivity  = new Intent(AddNote.this, DashboardActivity.class);
-                            startActivity(trasition_to_mainactivity);
-                            finish();
+                            //Toast.makeText(getApplicationContext(),"Positive button clicked",Toast.LENGTH_LONG).show();
+
+                            //Intent trasition_to_mainactivity  = new Intent(AddNote.this, DashboardActivity.class);
+                            //startActivity(trasition_to_mainactivity);
+                            //finish();
                         }
                     });
                     datePickerDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Negative", new DialogInterface.OnClickListener() {
@@ -150,24 +194,20 @@ public class AddNote extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(getApplicationContext(),"Negative clicked",Toast.LENGTH_LONG).show();
                         }
-                    });
-
-
+                    });**/
 
 
 
                 }
 
-                DocumentReference docref = fstore.collection(
-                        "notes").
-                        document(user.getUid()).collection("myNotes").document();
+                DocumentReference docref = fstore.collection("notes").document(user.getUid()).collection("myNotes").document();
 
-                exp_date = exp_date.toLowerCase().toString().trim();
+
 
                 Map<String,Object> note = new HashMap<>();
                 note.put("title",note_title);
                 note.put("content",note_content);
-                note.put("Exp Date",10/10/10);
+                note.put("exp",date);
 
                 docref.set(note).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -184,8 +224,14 @@ public class AddNote extends AppCompatActivity {
 
             }
         });
-
-
+        //edited.setText(date);
     }
 
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        String date = "month/day/year: " + month + "/" + dayOfMonth + "/" + year;
+        edited.setText(date);
+        Log.i("date gond",date);
+    }
 }
