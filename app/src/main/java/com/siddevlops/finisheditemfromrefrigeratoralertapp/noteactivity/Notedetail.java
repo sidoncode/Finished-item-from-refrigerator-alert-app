@@ -24,6 +24,8 @@ public class Notedetail extends AppCompatActivity {
 
     Intent data;
 
+    TextView expdate;
+
 
 
     @Override
@@ -41,9 +43,14 @@ public class Notedetail extends AppCompatActivity {
 
         TextView content = findViewById(R.id.noteDetailsContent);
         final TextView title = findViewById(R.id.noteDetailsTitle);
+        expdate = (TextView) findViewById(R.id.expdate);
 
         title.setText(data.getStringExtra("title"));
         content.setText(data.getStringExtra("content"));
+        expdate.setText(data.getStringExtra("exp"));
+
+
+
 
         //content.setBackgroundColor(data.getIntExtra("code",0)); // default random value ->  0 //
 
@@ -63,6 +70,7 @@ public class Notedetail extends AppCompatActivity {
                 i.putExtra("title",data.getStringExtra("title"));
                 i.putExtra("content",data.getStringExtra("content"));
                 i.putExtra("noteId",data.getStringExtra("noteId"));
+                i.putExtra("exp",data.getStringExtra("exp"));
                 startActivity(i);
             }
         });

@@ -66,8 +66,15 @@
 
         <include
             layout="@layout/content_note_details"
-            android:layout_height="147dp"
-            android:layout_width="190dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="147dp" />
+
+        <TextView
+            android:id="@+id/expdate"
+            android:layout_width="match_parent"
+            android:layout_height="86dp">
+
+        </TextView>
 
 
     </com.google.android.material.appbar.AppBarLayout>
