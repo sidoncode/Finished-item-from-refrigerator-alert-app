@@ -33,6 +33,8 @@ public class EditNote extends AppCompatActivity {
 
     EditText edttxtnotecontent;
     EditText edttxtnotetitle;
+    EditText edtexpdate;
+
 
     FirebaseFirestore fbfirestore;
     FloatingActionButton fab;
@@ -53,6 +55,7 @@ public class EditNote extends AppCompatActivity {
 
         edttxtnotecontent = (EditText) findViewById(R.id.editNoteContent);
         edttxtnotetitle = (EditText) findViewById(R.id.editNoteTitle);
+        edtexpdate = (EditText) findViewById(R.id.expdate);
 
         fab = (FloatingActionButton) findViewById(R.id.saveEditedNote);
         data = getIntent();
@@ -65,6 +68,8 @@ public class EditNote extends AppCompatActivity {
 
         edttxtnotetitle.setText(title);
         edttxtnotecontent.setText(content);
+        edtexpdate.setText(expdate);
+
 
 
         //mProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
@@ -106,6 +111,7 @@ public class EditNote extends AppCompatActivity {
                 //Toast.makeText(getApplicationContext(),"btn floating action button is clicked",Toast.LENGTH_SHORT).show();
                 String note_content = edttxtnotecontent.getText().toString();
                 String note_title = edttxtnotetitle.getText().toString();
+                String exp_date = edtexpdate.getText().toString();
 
 
                 if(note_content.isEmpty()){
@@ -131,7 +137,7 @@ public class EditNote extends AppCompatActivity {
                 Map<String,Object> note = new HashMap<>();
                 note.put("title",note_title);
                 note.put("content",note_content);
-                note.put("exp",date);
+                note.put("exp",exp_date);
 
 
                 docref.update(note).addOnSuccessListener(new OnSuccessListener<Void>() {

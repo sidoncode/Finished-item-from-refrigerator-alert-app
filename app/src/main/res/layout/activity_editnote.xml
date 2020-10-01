@@ -31,8 +31,8 @@
 
     <EditText
         android:id="@+id/editNoteContent"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="412dp"
+        android:layout_height="365dp"
         android:backgroundTint="@android:color/transparent"
         android:ems="10"
         android:gravity="start|top"
@@ -41,7 +41,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <EditText
+        android:id="@+id/expdate"
+        android:layout_width="match_parent"
+        android:layout_height="166dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNoteContent"
+        tools:layout_editor_absoluteX="16dp"
+        android:background="@color/grey"
+        android:textSize="32sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:hint="Enter Expiry Date Of The Product"
+        android:textColorHint="@color/white"
+        android:fontFamily="serif-monospace"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/saveEditedNote"

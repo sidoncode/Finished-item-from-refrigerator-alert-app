@@ -24,7 +24,7 @@ public class Notedetail extends AppCompatActivity {
 
     Intent data;
 
-    TextView expdate;
+
 
 
 
@@ -43,7 +43,7 @@ public class Notedetail extends AppCompatActivity {
 
         TextView content = findViewById(R.id.noteDetailsContent);
         final TextView title = findViewById(R.id.noteDetailsTitle);
-        expdate = (TextView) findViewById(R.id.expdate);
+        TextView expdate= (TextView) findViewById(R.id.expdate);
 
         title.setText(data.getStringExtra("title"));
         content.setText(data.getStringExtra("content"));

@@ -74,12 +74,6 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         });
 
 
-
-
-
-
-
-
     }
 
 

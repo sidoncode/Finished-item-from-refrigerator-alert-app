@@ -70,6 +70,10 @@
             android:layout_height="147dp" />
 
         <TextView
+            android:hint="Enter Expiry Date Of The Product"
+            android:textColor="@color/white"
+            android:textSize="29sp"
+            android:fontFamily="sans-serif"
             android:id="@+id/expdate"
             android:layout_width="match_parent"
             android:layout_height="86dp">
