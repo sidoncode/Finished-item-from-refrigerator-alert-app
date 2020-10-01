@@ -32,3 +32,7 @@ Food item in Refrigerator Reminder App
 ### 3 linking with the anon User
 ![iix](https://user-images.githubusercontent.com/40432616/94190954-6e8ffb00-feca-11ea-8225-fbc084f4bfec.PNG)
 
+### 4 Sending Expiry Date of the product(in String Form)
+![noteexpdate](https://user-images.githubusercontent.com/40432616/94778043-1b460d00-03e2-11eb-9728-b2919c67f9a1.PNG)
+
+
