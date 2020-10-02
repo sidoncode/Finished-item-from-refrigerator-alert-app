@@ -36,5 +36,8 @@ Food item in Refrigerator Reminder App
 ![noteexpdate](https://user-images.githubusercontent.com/40432616/94778043-1b460d00-03e2-11eb-9728-b2919c67f9a1.PNG)
 \
 ### Need to add the logic for the date left from the exp date of the product
+### need to add images in the ui changes
+### firebase fcm token storing 
+
 
 
