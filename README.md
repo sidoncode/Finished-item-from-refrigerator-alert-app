@@ -34,5 +34,7 @@ Food item in Refrigerator Reminder App
 
 ### 4 Sending Expiry Date of the product(in String Form)
 ![noteexpdate](https://user-images.githubusercontent.com/40432616/94778043-1b460d00-03e2-11eb-9728-b2919c67f9a1.PNG)
+\
+### Need to add the logic for the date left from the exp date of the product
 
 
