@@ -38,6 +38,7 @@ Food item in Refrigerator Reminder App
 ### Need to add the logic for the date left from the exp date of the product
 ### need to add images in the ui changes
 ### firebase fcm token storing 
+### need to add the notification feature
 
 
 
