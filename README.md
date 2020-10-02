@@ -39,6 +39,7 @@ Food item in Refrigerator Reminder App
 ### need to add images in the ui changes
 ### firebase fcm token storing 
 ### need to add the notification feature
+### need to add the sound/vibrate notifi.. in the app
 
 
 
