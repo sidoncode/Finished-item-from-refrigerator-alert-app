@@ -4,10 +4,12 @@ import com.siddevlops.finisheditemfromrefrigeratoralertapp.noteactivity.EditNote
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -37,7 +39,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AddNote extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
+public class AddNote extends AppCompatActivity{
 
       FirebaseFirestore fstore;
       FloatingActionButton fb;
@@ -71,7 +73,7 @@ public class AddNote extends AppCompatActivity implements DatePickerDialog.OnDat
 
         fb = findViewById(R.id.fab);
 
-        edited = (EditText) findViewById(R.id.text12);
+        edited = (EditText) findViewById(R.id.expdate);
 
         notecontent = (EditText) findViewById(R.id.addNoteContent);
         notetitle = (EditText) findViewById(R.id.addNoteTitle);
@@ -86,6 +88,8 @@ public class AddNote extends AppCompatActivity implements DatePickerDialog.OnDat
                 //Toast.makeText(getApplicationContext(),"btn floating action button is clicked",Toast.LENGTH_SHORT).show();
                 String note_content = notecontent.getText().toString();
                 String note_title = notetitle.getText().toString();
+                String expdate = edited.getText().toString();
+
 
 
 
@@ -99,14 +103,13 @@ public class AddNote extends AppCompatActivity implements DatePickerDialog.OnDat
                 else if(note_content.isEmpty() && note_title.isEmpty()){
                     Toast.makeText(getApplicationContext(),"The Note Content and Note Title is Empty",
                             Toast.LENGTH_SHORT).show();
-                }else{
-                    //Toast.makeText(getApplicationContext(),"Note added",Toast.LENGTH_SHORT).show();
-
-//                    mProgressBar.setVisibility(View.VISIBLE);
-
+                }else if (expdate.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Enter The Expiry Date Of the Food Product",
+                            Toast.LENGTH_SHORT).show();
 
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(
+                    //                    mProgressBar.setVisibility(View.VISIBLE);
+                    /**AlertDialog.Builder builder = new AlertDialog.Builder(
                             AddNote.this,R.style.
                             MaterialAlertDialog_MaterialComponents_Title_Icon
                     );
@@ -138,7 +141,7 @@ public class AddNote extends AppCompatActivity implements DatePickerDialog.OnDat
                         }
                     });
 
-                    builder.show();
+                    builder.show(); **/
 
 
 
@@ -199,27 +202,50 @@ public class AddNote extends AppCompatActivity implements DatePickerDialog.OnDat
 
 
                 }
-
-                DocumentReference docref = fstore.collection("notes").document(user.getUid()).collection("myNotes").document();
-
+                else if(!note_content.isEmpty() || !note_title.isEmpty() || !expdate.isEmpty()) {
 
 
-                Map<String,Object> note = new HashMap<>();
-                note.put("title",note_title);
-                note.put("content",note_content);
-                note.put("exp",date);
+                    Intent i = new Intent(Intent.ACTION_INSERT);
 
-                docref.set(note).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(getApplicationContext(),"Note added",Toast.LENGTH_SHORT).show();
+                    //i.setData(CalendarContract.Events.DESCRIPTION,note_content.ge)
+
+                    i.putExtra(CalendarContract.Events.DESCRIPTION,note_content);
+                    i.putExtra(CalendarContract.Events.TITLE,note_title);
+                    i.putExtra(CalendarContract.Events.ALL_DAY,true);
+
+                    if(i.resolveActivity(getPackageManager()) != null){
+
+                        startActivity(i);
+
+                        Log.i("startactivity","inside the if stmnt");
+
+
                     }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(),"Note not added",Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    Log.i("startactivity","outside the if stmnt");
+
+
+
+
+                    DocumentReference docref = fstore.collection("notes").document(user.getUid()).collection("myNotes").document();
+
+
+                    Map<String, Object> note = new HashMap<>();
+                    note.put("title", note_title);
+                    note.put("content", note_content);
+                    note.put("exp", expdate);
+
+                    docref.set(note).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(getApplicationContext(), "Note added", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getApplicationContext(), "Note not added", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
 
 
             }
@@ -228,10 +254,6 @@ public class AddNote extends AppCompatActivity implements DatePickerDialog.OnDat
     }
 
 
-    @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        String date = "month/day/year: " + month + "/" + dayOfMonth + "/" + year;
-        edited.setText(date);
-        Log.i("date gond",date);
-    }
+
+
 }
