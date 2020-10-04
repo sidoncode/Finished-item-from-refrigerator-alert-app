@@ -78,8 +78,8 @@ public class EditNote extends AppCompatActivity {
         // set onclick listeners //
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(
+          public void onClick(View v) {
+                /**AlertDialog.Builder builder = new AlertDialog.Builder(
                         EditNote.this,R.style.
                         MaterialAlertDialog_MaterialComponents_Title_Icon
                 );
@@ -106,7 +106,7 @@ public class EditNote extends AppCompatActivity {
                                 Toast.LENGTH_LONG).show();
                     }
                 });
-                builder.show();
+                builder.show();**/
 
                 //Toast.makeText(getApplicationContext(),"btn floating action button is clicked",Toast.LENGTH_SHORT).show();
                 String note_content = edttxtnotecontent.getText().toString();
