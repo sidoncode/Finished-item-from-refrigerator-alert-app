@@ -46,5 +46,8 @@ Food item in Refrigerator Reminder App
 ### need to add the notification feature
 ### need to add the sound/vibrate notifi.. in the app
 
+### Last thing for the profiles of the user
+
+
 
 
