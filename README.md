@@ -51,6 +51,8 @@ Food item in Refrigerator Reminder App
 
 ## ![appicon2](https://user-images.githubusercontent.com/40432616/95661975-3edf2500-0b51-11eb-8ec8-0de4efe0862f.png)
 ## ![app feature](https://user-images.githubusercontent.com/40432616/95661977-40a8e880-0b51-11eb-852c-356156fa01ba.png)
+## ![Screenshot_2020-10-04-14-46-16-338_com siddevlops finisheditemfromrefrigeratoralertapp](https://user-images.githubusercontent.com/40432616/95662008-85348400-0b51-11eb-9719-dd36dfd8282c.jpg)
+
 
 
 
