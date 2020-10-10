@@ -50,6 +50,8 @@ Food item in Refrigerator Reminder App
 
 
 ## ![appicon2](https://user-images.githubusercontent.com/40432616/95661975-3edf2500-0b51-11eb-8ec8-0de4efe0862f.png)
+## ![app feature](https://user-images.githubusercontent.com/40432616/95661977-40a8e880-0b51-11eb-852c-356156fa01ba.png)
+
 
 
 
