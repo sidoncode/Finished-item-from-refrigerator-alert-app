@@ -94,6 +94,13 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".DashboardActivity"></activity>
 
+        <!-- eating habit -->
+        <activity android:name=".EatingHabit"
+            android:parentActivityName=".DashboardActivity"
+
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
     </application>
 
 </manifest>

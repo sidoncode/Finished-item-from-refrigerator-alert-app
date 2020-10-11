@@ -99,6 +99,16 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         });
 
 
+        Cardview4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Eating_Habit = new Intent(DashboardActivity.this,EatingHabit.class);
+                startActivity(Eating_Habit);
+                finish();
+            }
+        });
+
+
     }
 
 
