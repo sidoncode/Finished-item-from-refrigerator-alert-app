@@ -28,6 +28,19 @@
                 android:textColor="#ffffff"
                 android:textSize="42sp"></TextView>
 
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/ad_view1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-9094130848994954/2051462044"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </com.google.android.gms.ads.AdView>
+
+
 
 
             <ImageView
@@ -103,7 +116,7 @@
                     android:gravity="center">
 
                     <ImageView
-                        android:src="@drawable/groceries"
+                        android:src="@drawable/expenses"
                         android:layout_width="80dp"
                         android:layout_height="80dp">
                     </ImageView>
@@ -136,7 +149,7 @@
                     android:gravity="center">
 
                     <ImageView
-                        android:src="@drawable/groceries"
+                        android:src="@drawable/userprofile"
                         android:layout_width="80dp"
                         android:layout_height="80dp">
                     </ImageView>

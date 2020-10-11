@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.INTERNET">
+
+    </uses-permission>
 
 
 
@@ -59,7 +62,8 @@
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
 
         <activity android:name=".ProfileActivity"
-            android:parentActivityName=".DashboardActivity">
+            android:parentActivityName=".DashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
 
