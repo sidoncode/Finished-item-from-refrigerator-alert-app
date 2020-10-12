@@ -106,6 +106,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
 
+
+
                         FirebaseUser usr = fact.getCurrentUser();
 
                     }
