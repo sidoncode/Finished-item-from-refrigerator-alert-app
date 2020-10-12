@@ -5,8 +5,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +37,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private Class acone;
 
     private TextView edtshow;
+    private EditText edtnamevar;
+    private EditText txtallset;
+
 
 
     @Override
@@ -44,23 +49,46 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         btnSignout = (Button) findViewById(R.id.btnSignout);
 
+        edtnamevar = (EditText) findViewById(R.id.edtname);
+
         mFirebaseAuth = FirebaseAuth.getInstance();
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         user = mFirebaseAuth.getCurrentUser();
 
-        txtsignout = (TextView) findViewById(R.id.txtsignout);
+        txtallset = (EditText)findViewById(R.id.txtallset);
 
-        acone = (Class) DashboardActivity.class;
 
-        edtshow = (TextView) findViewById(R.id.edtshow);
 
-        Login obj = new Login();
 
-        String email  = obj.getVal_email();
 
-        edtshow.setText(email);
-        txtsignout.setOnClickListener(new View.OnClickListener() {
+        edtnamevar.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)){
+
+                    String var_name = edtnamevar.getText().toString();
+
+                        if(var_name.isEmpty()){
+                            Toast.makeText(getApplicationContext(),"Enter User Name",Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            edtnamevar.setText(var_name);
+                            Toast.makeText(getApplicationContext(),"All Set to Go",Toast.LENGTH_LONG).show();
+
+                            txtallset.setText("And You Are Set To Shine");
+
+                        }
+
+                        return true;
+
+                }
+                return false;
+            }
+        });
+
+
+        btnSignout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
