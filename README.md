@@ -46,13 +46,14 @@ Food item in Refrigerator Reminder App
 ### need to add the notification feature
 ### need to add the sound/vibrate notifi.. in the app
 
-### Last thing for the profiles of the user
+### Last thing for the profiles of the user DONE
 
 
 ## ![appicon2](https://user-images.githubusercontent.com/40432616/95661975-3edf2500-0b51-11eb-8ec8-0de4efe0862f.png)
 ## ![app feature](https://user-images.githubusercontent.com/40432616/95661977-40a8e880-0b51-11eb-852c-356156fa01ba.png)
 ## ![Screenshot_2020-10-04-14-46-16-338_com siddevlops finisheditemfromrefrigeratoralertapp](https://user-images.githubusercontent.com/40432616/95662008-85348400-0b51-11eb-9719-dd36dfd8282c.jpg)
 
+### Things Done
 
 
 
