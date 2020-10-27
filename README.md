@@ -53,6 +53,10 @@ Food item in Refrigerator Reminder App
 ## ![app feature](https://user-images.githubusercontent.com/40432616/95661977-40a8e880-0b51-11eb-852c-356156fa01ba.png)
 ## ![Screenshot_2020-10-04-14-46-16-338_com siddevlops finisheditemfromrefrigeratoralertapp](https://user-images.githubusercontent.com/40432616/95662008-85348400-0b51-11eb-9719-dd36dfd8282c.jpg)
 
+## FIREBASE SECURITY CHANGE:
+![cnz31s](https://user-images.githubusercontent.com/40432616/97309894-9b984a80-1888-11eb-933c-fac4bd2b72a7.PNG)
+
+
 ## Things Done
 ### 1) Profile Activity Done
 ### 2) Firebase Recycler View Done in Eating Habit(Real Time Database)
