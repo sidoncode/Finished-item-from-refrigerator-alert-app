@@ -1,9 +1,16 @@
 package com.siddevlops.finisheditemfromrefrigeratoralertapp;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.icu.util.Measure;
 import android.os.Bundle;
 import android.os.Message;
+import android.speech.tts.TextToSpeechService;
+import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,34 +40,39 @@ public class EatingHabit extends AppCompatActivity {
 
     private RecyclerAdapter mRecyclerAdapter;
     private Context mContext;
+    private ProgressBar mProgressBar;
 
-
-
-
+    int flag = 0;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eatinghabit);
-
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
+
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mRecyclerView.setHasFixedSize(true);
 
         //fire base //
-
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
 
         //array list//
-
         messagesarraylist = new ArrayList<>();
 
         //get data method//
-
         GetDatafromFirebase();
+
+        if(flag == 1){
+            mProgressBar.setVisibility(View.GONE);
+        }
+
+
+
     }
 
     private void GetDatafromFirebase() {
@@ -87,6 +99,13 @@ public class EatingHabit extends AppCompatActivity {
                 mRecyclerAdapter = new RecyclerAdapter(getApplicationContext(),messagesarraylist);
                 mRecyclerView.setAdapter(mRecyclerAdapter);
                 mRecyclerAdapter.notifyDataSetChanged();
+                flag = 1;
+
+                Toast.makeText(getApplicationContext(),"Scraping The Web For Best Health Tips",Toast.LENGTH_SHORT).show();
+
+                mProgressBar.setVisibility(View.GONE);
+
+
             }
 
             @Override
@@ -109,7 +128,16 @@ public class EatingHabit extends AppCompatActivity {
         }
         messagesarraylist = new ArrayList<>();
 
-        }
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(EatingHabit.this,DashboardActivity.class));
+        finish();
+        super.onBackPressed();
+    }
+
 
 }
 

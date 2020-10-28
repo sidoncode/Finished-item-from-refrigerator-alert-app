@@ -39,6 +39,13 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * admob module use import
+ */
+
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.AdRequest;
+
 public class AddNote extends AppCompatActivity{
 
       FirebaseFirestore fstore;
@@ -60,7 +67,7 @@ public class AddNote extends AppCompatActivity{
 
     private  EditText mEditText;
 
-
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -79,13 +86,26 @@ public class AddNote extends AppCompatActivity{
         notetitle = (EditText) findViewById(R.id.addNoteTitle);
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
 
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-9094130848994954/6645307006");
+
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
 
 
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                    Log.i("ad", "ad is loaded"+mInterstitialAd.isLoaded());
+                }
+                else{
+                    //Log.i();
+                }
 
-                //Toast.makeText(getApplicationContext(),"btn floating action button is clicked",Toast.LENGTH_SHORT).show();
+
+                    //Toast.makeText(getApplicationContext(),"btn floating action button is clicked",Toast.LENGTH_SHORT).show();
                 String note_content = notecontent.getText().toString();
                 String note_title = notetitle.getText().toString();
                 String expdate = edited.getText().toString();

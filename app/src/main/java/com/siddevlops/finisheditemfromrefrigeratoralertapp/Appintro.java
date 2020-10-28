@@ -35,6 +35,12 @@ public class Appintro extends AppIntro {
         addSlide(AppIntroFragment.newInstance("Welcome to the app","first slide",R.drawable.img,
                 ContextCompat.getColor(getApplicationContext(),R.color.purpel)));
 
+        addSlide(AppIntroFragment.newInstance("Welcome to the app","first slide",R.drawable.slidetwo,
+                ContextCompat.getColor(getApplicationContext(),R.color.blue)));
+
+
+        addSlide(AppIntroFragment.newInstance("Welcome to the app","first slide",R.drawable.circle_rocket,
+                ContextCompat.getColor(getApplicationContext(),R.color.white)));
 
 
         mSharedPreferences  = getApplicationContext().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);

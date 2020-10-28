@@ -27,7 +27,7 @@ import com.razerdp.widget.animatedpieview.data.SimplePieInfo;
 
 
 
-public class FoodExpenses extends AppCompatActivity implements IPieInfo{
+public class FoodExpenses extends AppCompatActivity {
 
     private EditText edt;
     private EditText edttwo;
@@ -85,16 +85,6 @@ public class FoodExpenses extends AppCompatActivity implements IPieInfo{
 
         Log.i("number in edttext","val" + val);
 
-        /**
-        try {
-
-            val_f = Double.parseDouble(val);
-
-        }
-        catch (Exception e){
-            e.getMessage();
-        }**/
-
 
         AnimatedPieView animatedPieView = findViewById(R.id.piechart);
 
@@ -111,11 +101,8 @@ public class FoodExpenses extends AppCompatActivity implements IPieInfo{
 
 
 
-
-
-
-        config.addData(new SimplePieInfo(c, Color.parseColor("#4c84ff"),"A"));
-        config.addData(new SimplePieInfo(b, Color.parseColor("#18a3fe"),"B"));
+        config.addData(new SimplePieInfo(200, Color.parseColor("#4c84ff"),"A"));
+        config.addData(new SimplePieInfo(250, Color.parseColor("#18a3fe"),"B"));
         config.addData(new SimplePieInfo(200, Color.parseColor("#656565"),"C"));
         config.duration(1000);
         config.drawText(true);
@@ -133,46 +120,12 @@ public class FoodExpenses extends AppCompatActivity implements IPieInfo{
 
         animatedPieView.start();
 
-
-
-
-
-
     }
 
     @Override
     public void onBackPressed() {
         startActivity(new Intent(FoodExpenses.this,DashboardActivity.class));
+        finish();
         super.onBackPressed();
-    }
-
-    @Override
-    public double getValue() {
-        edt.getText().toString();
-
-
-        try {
-            val = Double.valueOf(edt.getText().toString());
-        }
-        catch (Exception e){
-            e.getMessage();
-        }
-        return val;
-    }
-
-    @Override
-    public int getColor() {
-        return 0;
-    }
-
-    @Override
-    public String getDesc() {
-        return null;
-    }
-
-    @Nullable
-    @Override
-    public PieOption getPieOption() {
-        return null;
     }
 }

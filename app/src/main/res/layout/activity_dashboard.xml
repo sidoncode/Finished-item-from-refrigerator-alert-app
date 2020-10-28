@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:text="My Dashboard"
                 android:textColor="#ffffff"
-                android:textSize="42sp"></TextView>
+                android:textSize="42sp"/>
 
             <com.google.android.gms.ads.AdView
                 android:id="@+id/ad_view1"
@@ -48,13 +48,8 @@
                 android:layout_height="62dp"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/ic_baseline_navigate_next_24">
-
-
             </ImageView>
-            
-            
-            
-            
+
         </RelativeLayout>
         
         <GridLayout
@@ -87,12 +82,13 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp">
                     </ImageView>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Enter Food Items"
                         android:textColor="@color/intro_title_color"
-                        android:layout_marginTop="12dp"></TextView>
+                        android:layout_marginTop="12dp"/>
 
 
                 </LinearLayout>
@@ -125,7 +121,7 @@
                         android:layout_height="wrap_content"
                         android:text="Overall Expenses"
                         android:textColor="@color/intro_title_color"
-                        android:layout_marginTop="12dp"></TextView>
+                        android:layout_marginTop="12dp"/>
 
 
                 </LinearLayout>
@@ -159,7 +155,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:text="Improve Eating Habits"
-                        android:textColor="@color/intro_title_color"></TextView>
+                        android:textColor="@color/intro_title_color"/>
 
 
                 </LinearLayout>
@@ -192,7 +188,7 @@
                         android:layout_height="wrap_content"
                         android:text="Your Profile"
                         android:textColor="@color/intro_title_color"
-                        android:layout_marginTop="12dp"></TextView>
+                        android:layout_marginTop="12dp"/>
 
 
                 </LinearLayout>
@@ -218,13 +214,14 @@
                     <ImageView
                         android:layout_width="94dp"
                         android:layout_height="81dp"
-                        android:src="@drawable/healthreport"></ImageView>
+                        android:src="@drawable/healthreport"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Health Status"
                         android:textColor="@color/intro_title_color"
-                        android:layout_marginTop="12dp"></TextView>
+                        android:layout_marginTop="12dp"/>
 
 
                 </LinearLayout>
@@ -257,7 +254,7 @@
                         android:layout_height="wrap_content"
                         android:text="Know More"
                         android:textColor="@color/intro_title_color"
-                        android:layout_marginTop="12dp"></TextView>
+                        android:layout_marginTop="12dp"/>
 
 
                 </LinearLayout>

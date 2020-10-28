@@ -33,8 +33,6 @@ public class Splash extends AppCompatActivity {
         fauth = FirebaseAuth.getInstance();
 
 
-        txtsplash = (TextView) findViewById(R.id.txtspash);
-
         Handler handler  = new Handler();
 
         handler.postDelayed(new Runnable() {
