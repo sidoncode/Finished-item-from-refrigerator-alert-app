@@ -7,6 +7,7 @@ import com.onesignal.OSNotification;
 import com.onesignal.OSNotificationAction;
 import com.onesignal.OSNotificationOpenResult;
 import com.onesignal.OneSignal;
+import com.siddevlops.finisheditemfromrefrigeratoralertapp.DashboardActivity;
 import com.siddevlops.finisheditemfromrefrigeratoralertapp.EatingHabit;
 import com.siddevlops.finisheditemfromrefrigeratoralertapp.MainActivity;
 import org.json.JSONObject;
@@ -69,7 +70,7 @@ public class ApplicationClass extends Application {
 
             String customKey;
             String openURL = null;
-            Object activityToLaunch = MainActivity.class;
+            Object activityToLaunch = DashboardActivity.class;
 
             if (data != null) {
                 customKey = data.optString("customkey", null);
@@ -87,7 +88,7 @@ public class ApplicationClass extends Application {
 
                 if (result.action.actionID.equals("id1")) {
                     Log.i("OneSignalExample", "button id called: " + result.action.actionID);
-                    activityToLaunch = EatingHabit.class;
+                    activityToLaunch = DashboardActivity.class;
                 } else
                     Log.i("OneSignalExample", "button id called: " + result.action.actionID);
             }
