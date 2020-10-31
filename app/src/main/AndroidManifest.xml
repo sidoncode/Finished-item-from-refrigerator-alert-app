@@ -14,7 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".ApplicationClass">
+        android:name=".onesignal.ApplicationClass">
+
+        <meta-data android:name="com.onesignal.NotificationOpened.DEFAULT" android:value="DISABLE" />
+
         <activity
             android:name=".noteactivity.Notedetail"
             android:label="@string/title_activity_notedetail"
@@ -23,8 +26,6 @@
 
 
         <!--  splash activity is the launcher activity -->
-
-
         <activity android:name=".userauth.Splash"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -96,6 +97,8 @@
 
         <activity android:name=".Expenses"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <meta-data android:name="com.onesignal.NotificationOpened.DEFAULT" android:value="DISABLE" />
     </application>
     
 

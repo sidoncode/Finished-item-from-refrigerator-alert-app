@@ -30,7 +30,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class EatingHabit extends AppCompatActivity {
-
+    public Context mContext;
     private RecyclerView mRecyclerView;
     private DatabaseReference mDatabaseReference;
 
@@ -39,7 +39,7 @@ public class EatingHabit extends AppCompatActivity {
     private ArrayList<ModelEatingHabit> messagesarraylist;
 
     private RecyclerAdapter mRecyclerAdapter;
-    private Context mContext;
+
     private ProgressBar mProgressBar;
 
     int flag = 0;
