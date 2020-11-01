@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/background"
-    tools:context=".userauth.Registration">
+    tools:context=".userauth.Registration"
+    android:theme="@style/Theme.Design.NoActionBar">
 
 
 +

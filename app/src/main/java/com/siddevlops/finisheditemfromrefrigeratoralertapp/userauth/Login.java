@@ -148,4 +148,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Login.this,DashboardActivity.class));
+        Toast.makeText(getApplicationContext(),"Notes Arn't Saved",Toast.LENGTH_SHORT).show();
+        finish();
+        super.onBackPressed();
+    }
 }

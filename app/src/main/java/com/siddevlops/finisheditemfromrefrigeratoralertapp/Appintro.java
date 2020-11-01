@@ -28,19 +28,16 @@ public class Appintro extends AppIntro {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_appintro);
 
-        // getSupportActionBar().hide();
-
-        addSlide(AppIntroFragment.newInstance("Welcome to the app","first slide",R.drawable.img,
+        addSlide(AppIntroFragment.newInstance("Welcome to the app","All you need is love. But a little chocolate now and then doesn't hurt",R.drawable.img,
                 ContextCompat.getColor(getApplicationContext(),R.color.purpel)));
 
-        addSlide(AppIntroFragment.newInstance("Welcome to the app","first slide",R.drawable.slidetwo,
+        addSlide(AppIntroFragment.newInstance("The App Also Suggests the Food Recommendations","9 out of 10 people love chocolate. And the 10th person is always lying.",R.drawable.slidetwo,
                 ContextCompat.getColor(getApplicationContext(),R.color.blue)));
 
 
-        addSlide(AppIntroFragment.newInstance("Welcome to the app","first slide",R.drawable.circle_rocket,
-                ContextCompat.getColor(getApplicationContext(),R.color.white)));
+        addSlide(AppIntroFragment.newInstance("Great To Have You On-Board","Good people, good food, good time.",R.drawable.circle_rocket,
+                ContextCompat.getColor(getApplicationContext(),R.color.grey)));
 
 
         mSharedPreferences  = getApplicationContext().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);

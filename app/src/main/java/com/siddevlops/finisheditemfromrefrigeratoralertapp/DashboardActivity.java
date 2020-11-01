@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.PermissionRequest;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,6 +37,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     // add view;
 
     private AdView adview1;
+    private TextView arrow;
 
 
 
@@ -64,6 +66,9 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         Cardview4 = findViewById(R.id.cardview4);
         Cardview5 = findViewById(R.id.cardview5);
         Cardview6 = findViewById(R.id.cardview6);
+
+        // find for arrow //
+        arrow = findViewById(R.id.arrow);
 
         // set on click listerners
         Cardview1.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +109,15 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             public void onClick(View v) {
                 Intent Eating_Habit = new Intent(DashboardActivity.this,EatingHabit.class);
                 startActivity(Eating_Habit);
+                finish();
+            }
+        });
+
+        arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent abut = new Intent(DashboardActivity.this,About.class);
+                startActivity(abut);
                 finish();
             }
         });

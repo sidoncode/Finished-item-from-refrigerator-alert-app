@@ -1,5 +1,6 @@
 package com.siddevlops.finisheditemfromrefrigeratoralertapp.noteactivity;
 
+import com.siddevlops.finisheditemfromrefrigeratoralertapp.DashboardActivity;
 import com.siddevlops.finisheditemfromrefrigeratoralertapp.noteactivity.EditNote;
 
 import android.app.DatePickerDialog;
@@ -273,7 +274,10 @@ public class AddNote extends AppCompatActivity{
         //edited.setText(date);
     }
 
-
-
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(AddNote.this, DashboardActivity.class));
+        finish();
+        super.onBackPressed();
+    }
 }

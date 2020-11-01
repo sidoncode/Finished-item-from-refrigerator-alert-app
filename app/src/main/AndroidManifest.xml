@@ -70,21 +70,20 @@
 
 
         <!-- login activity -->
-
         <activity android:name=".userauth.Login"
-            android:parentActivityName=".DashboardActivity">
+            android:parentActivityName=".DashboardActivity"
+            android:theme="@style/Theme.Design.NoActionBar">
         </activity>
 
 
         <!-- Registration Activity -->
-
         <activity android:name=".userauth.Registration"
-            android:parentActivityName=".DashboardActivity"/>
+            android:parentActivityName=".DashboardActivity"
+            android:theme="@style/Theme.Design.NoActionBar"/>
 
 
 
         <!--  edit note java class -->
-
         <activity android:name=".noteactivity.EditNote"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".DashboardActivity"/>
